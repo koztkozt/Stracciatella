@@ -66,9 +66,6 @@
   <PropertyGroup>
     <PostBuildEvent>copy /Y $(TargetPath) $(SolutionDir)</PostBuildEvent>
   </PropertyGroup>
-  <PropertyGroup>
-    <PreBuildEvent>powershell.exe -File "$(SolutionDir)Stracciatella\Out-CSharpDataClass.ps1" -SolutionDir "$(SolutionDir)." -Target1 "$(SolutionDir)ClmDisableAssembly\bin\$(ConfigurationName)\ClmDisableAssembly.dll" -Target2 "$(SolutionDir)ClmDisableDll\ClmDisableDll.dll" -Verbose</PreBuildEvent>
-  </PropertyGroup>
   <Import Project="VersionSpecificSymbols.prop" />
   <Import Project="..\packages\dnMerge.0.5.15\build\dnMerge.targets" Condition="Exists('..\packages\dnMerge.0.5.15\build\dnMerge.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
